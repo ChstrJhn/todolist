@@ -2,6 +2,7 @@ require_relative 'config/application'
 require_relative 'app/controllers/todo_controller'
 puts "Put your application code in #{File.expand_path(__FILE__)}"
 
+input = ARGV
 
 if input[0] == "list"
   TodoController.list

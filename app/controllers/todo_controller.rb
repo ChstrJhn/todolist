@@ -21,8 +21,9 @@ class TodoController < ActiveRecord::Base
   end
 
   def self.delete(id)
-    task = Task.find(id).destroy
-    puts "You've deleted #{deleted_task.name} from your lists. Lazy much?"
+    task = Task.find(id)
+    task.destroy
+    puts "You've deleted" + " #{task.details} " + "from your lists. Lazy much?"
   end
 
   def self.done(id)
@@ -34,17 +35,17 @@ class TodoController < ActiveRecord::Base
 
 end
 
-if input[0] == "list"
-my_list = TasksController.list 
+# if input[0] == "list"
+# my_list = TasksController.list 
 
-elsif input[0] == "add"
-  my_list.add(input[1..-1])
+# elsif input[0] == "add"
+#   my_list.add(input[1..-1])
 
 
-elsif input[0] == "delete"
-  my_list.delete(input[1].to_i)
+# elsif input[0] == "delete"
+#   my_list.delete(input[1].to_i)
 
-else input[0] == "done"
-  my_list.done(input[1].to_i)
-end
+# else input[0] == "done"
+#   my_list.done(input[1].to_i)
+# end
 
