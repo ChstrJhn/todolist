@@ -3,6 +3,7 @@ require_relative 'list'
 
 class Task < ActiveRecord::Base
   belongs_to :lists
+  validates :details, presence: true
 end
 
-# p Task.all
+p Task.all
